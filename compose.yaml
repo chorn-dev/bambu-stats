@@ -1,10 +1,10 @@
 networks:
   default:
     name: bambu-stats
-    external: true
+    driver: bridge
 services:
   bambu-stats:
-    image: chorn/bambu-stats:latest
+    image: ghcr.io/chorn-dev/bambu-stats:latest
     container_name: bambu-stats
     environment:
       printer_ip: 10.0.0.191
