@@ -15,7 +15,7 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-  grafana:
+  bs-grafana:
     image: grafana/grafana:latest
     container_name: grafana
     restart: unless-stopped
@@ -29,7 +29,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD=bambu-stats.json
-  mysql:
+  bs-mysql:
     image: mysql:8.0
     container_name: mysql_bambu
     restart: always
@@ -49,7 +49,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - ./mysql/init:/docker-entrypoint-initdb.d
-  phpmyadmin:
+  bs-phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
     environment:
