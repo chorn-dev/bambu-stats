@@ -13,7 +13,7 @@ services:
     command: bash -c "openssl s_client -showcerts -connect $${printer_ip}:8883 </dev/null | sed -n -e '/-.BEGIN/,/-.END/ p' > blcert.pem && python bambu.py"
     restart: unless-stopped
     depends_on:
-      mysql:
+      bs-mysql:
         condition: service_healthy
   bs-grafana:
     image: grafana/grafana:latest
