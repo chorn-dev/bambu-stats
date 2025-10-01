@@ -56,7 +56,7 @@ services:
       - PMA_HOST=mysql_bambu
       - PMA_PORT=3306
     ports:
-      - 4646:80
+      - 5656:80
 volumes:
   grafana-data:
   db_data:
