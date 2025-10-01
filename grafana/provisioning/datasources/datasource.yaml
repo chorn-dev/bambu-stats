@@ -3,7 +3,7 @@ datasources:
   - name: mysql
     type: mysql
     access: proxy
-    url: mysql:3306
+    url: bs-mysql:3306
     database: bambu-stats
     user: root
     secureJsonData:
