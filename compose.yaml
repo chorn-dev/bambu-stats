@@ -17,7 +17,7 @@ services:
         condition: service_healthy
   bs-grafana:
     image: grafana/grafana:latest
-    container_name: grafana
+    container_name: bs-grafana
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -51,7 +51,7 @@ services:
       - ./mysql/init:/docker-entrypoint-initdb.d
   bs-phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmin
+    container_name: bs-phpmyadmin
     environment:
       - PMA_HOST=mysql_bambu
       - PMA_PORT=3306
